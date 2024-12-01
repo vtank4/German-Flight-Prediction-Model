@@ -65,22 +65,6 @@ A machine learning project that predicts and categorizes flight prices for the G
 - seaborn
 - statsmodels
 
-## Project Structure
-```
-├── data/
-│   └── german_domestic_airfares.csv
-├── notebooks/
-│   ├── data_preprocessing.ipynb
-│   ├── exploratory_analysis.ipynb
-│   └── model_training.ipynb
-├── src/
-│   ├── preprocessing/
-│   ├── modeling/
-│   └── evaluation/
-├── requirements.txt
-└── README.md
-```
-
 ## Future Improvements
 - Expand feature engineering for temporal patterns
 - Implement more complex hyperparameter optimization
@@ -92,7 +76,7 @@ Dataset source:
 ```
 German Domestic Air Fares
 Published: January 6, 2021
-DOI: [dataset DOI]
+DOI: 10.17632/gz75x2pzr7.2
 Contributor: Frederick F
 Institution: Zeppelin Universität
 ```
