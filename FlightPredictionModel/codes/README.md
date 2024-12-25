@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates the process of building machine learning models to predict flight prices using German air fare data. We explore and compare the performance of three different algorithms: Random Forest Regressor, Gradient Boosting Regressor, and Random Forest Classifier.
+This project demonstrates the process of building machine learning models to predict flight prices using German air fare data. I explore and compare the performance of three different algorithms: Random Forest Regressor, Gradient Boosting Regressor, and Random Forest Classifier.
 
 ## Goal
 
@@ -70,7 +70,7 @@ df = pd.read_csv('german_flight_data.csv')
 df.head()
 
 ### Step 2: Data Preprocessing
-To prepare the data for model training, we need to:
+To prepare the data for model training, I need to:
   Drop irrelevant columns.
   Encode categorical variables: Convert categorical features into numerical values.
 # Drop columns that aren't needed
@@ -80,7 +80,7 @@ df = df.drop(['column_to_drop'], axis=1)
 df['category_column'] = df['category_column'].astype('category').cat.codes
 
 ### Step3: Step 3: Split the Dataset
-Next, we split the dataset into training and test sets. This allows us to train the model on one portion and evaluate it on another to measure performance:
+Next, I split the dataset into training and test sets. This allows me to train the model on one portion and evaluate it on another to measure performance:
 
 from sklearn.model_selection import train_test_split
 
@@ -168,7 +168,7 @@ new_data.to_csv('predicted_flight_prices.csv', index=False) -->
 
 ## Overview
 
-This project demonstrates the process of building machine learning models to predict flight prices using German air fare data. We explore and compare the performance of three different algorithms: Random Forest Regressor, Gradient Boosting Regressor, and Random Forest Classifier.
+This project demonstrates the process of building machine learning models to predict flight prices using German air fare data. I explore and compare the performance of three different algorithms: Random Forest Regressor, Gradient Boosting Regressor, and Random Forest Classifier.
 
 ## Table of Contents
 

@@ -2,14 +2,14 @@
 # # Flight Price Prediction Machine Learning Model
 #
 # ## Overview
-# This notebook demonstrates the process of building machine learning models to predict flight prices using German air fare data. We will explore and compare the performance of three different algorithms:
+# This notebook demonstrates the process of building machine learning models to predict flight prices using German air fare data. I will explore and compare the performance of three different algorithms:
 #
 # 1. Random Forest Regressor
 # 2. Gradient Boosting Regressor
 # 3. Random Forest Classifier
 #
 # ## Goal
-# Our goal is to develop accurate models for predicting flight prices and gain insights into the factors that influence ticket costs in the German air travel market.
+# my goal is to develop accurate models for predicting flight prices and gain insights into the factors that influence ticket costs in the German air travel market.
 #
 # ## Process
 # The notebook covers the following steps:
@@ -358,7 +358,7 @@ def times_to_minute(time_obj: Annotated[datetime, Doc("The time object to be con
 # %% [markdown]
 # ### Feature Engineering
 #
-# This section focuses on preprocessing the data and creating new features to enhance our analysis and model performance.
+# This section focuses on preprocessing the data and creating new features to enhance my analysis and model performance.
 #
 # #### New Features Created:
 #
@@ -538,7 +538,7 @@ def plot_boxplots(df: Annotated[pd.DataFrame, Doc("The DataFrame to be plotted")
 # %% [markdown]
 # ### Main logic for detecting and handling outlier detection
 #
-# The given steps show how we have performed detecting and handling outlier on our dataset:
+# The given steps show how I have performed detecting and handling outlier on my dataset:
 #
 # 1. Identify numerical columns (except the target 'price' column)
 # 2. Plot boxplots before outlier handling to visualize the distribution and potential outliers
@@ -548,7 +548,7 @@ def plot_boxplots(df: Annotated[pd.DataFrame, Doc("The DataFrame to be plotted")
 # 6. Calculate and print the percentage of data retained after outlier handling
 # 7. Visualize the distribution of flight prices after outlier handling
 #
-# These processes have helped us identify and mitigate the impact of extreme values in our dataset, which could potentially create a negative impact to our data.
+# These processes have helped me identify and mitigate the impact of extreme values in my dataset, which could potentially create a negative impact to my data.
 #
 
 
@@ -569,7 +569,7 @@ print("Number of outliers in each column: ", outliers)
 total_rows = len(df)  # total of rows before outlier handling
 print(f"Total number of rows before outlier handling: {total_rows}")
 
-# Handle outliers (here we'll use capping method). By setting the lower and upper bounds for each numerical column, if the value is below the 1st percentile or above the 99th percentile respectively, replace it with the corresponding bound. (lower bound for values below 1st percentile, upper bound for values above 99th percentile)
+# Handle outliers (here I'll use capping method). By setting the lower and upper bounds for each numerical column, if the value is below the 1st percentile or above the 99th percentile respectively, replace it with the corresponding bound. (lower bound for values below 1st percentile, upper bound for values above 99th percentile)
 for col in numerical_cols:
     lower_bound = df[col].quantile(0.01)  # 1st percentile
     upper_bound = df[col].quantile(0.99)  # 99th percentile
@@ -842,7 +842,7 @@ print(summary)
 #     - Using `train_test_split()` to split data with a 80% for training and 20% for testing.
 #     - Creating separate splits for regression and classification tasks.
 #
-# By executing the below cell, we have created separate datasets for:
+# By executing the below cell, I have created separate datasets for:
 #  - Regression: Predicting the exact price
 #  - Classification: Predicting the price category
 #
@@ -882,7 +882,7 @@ for col in numerical_cols:
 # %% [markdown]
 # ### Feature Scaling and Encoding
 #
-# After analyzing the distribution of the numerical columns, we observed that the values are not normally distributed. Therefore, `MinMaxScaler` is the best algorithm to used for normalizing these columns.
+# After analyzing the distribution of the numerical columns, I observed that the values are not normally distributed. Therefore, `MinMaxScaler` is the best algorithm to used for normalizing these columns.
 #
 # For categorical variables, `OneHotEncoder` is used since these variables are nominal (not ordinal), thus one-hot encoding the most suitable method.
 #
@@ -897,7 +897,7 @@ for col in numerical_cols:
 
 # %%
 # Scale numerical variables
-# # After analyzing the distribution of the selected numerical columns, we can see that the values are not normally distributed. Therefore, we will use the MinMaxScaler to normalize the numerical columns.
+# # After analyzing the distribution of the selected numerical columns, I can see that the values are not normally distributed. Therefore, I will use the MinMaxScaler to normalize the numerical columns.
 scaler = MinMaxScaler()
 X_train_scaled_rg = pd.DataFrame(scaler.fit_transform(X_train_rg[numerical_cols]),
                                  columns=numerical_cols,
@@ -913,7 +913,7 @@ X_test_scaled_cl = pd.DataFrame(scaler.transform(X_test_cl[numerical_cols]),
                                 columns=numerical_cols,
                                 index=X_test_cl.index)  # only transform the test set to avoid data leakage
 
-# One-hot encode categorical variables. We will use the OneHotEncoder to encode the categorical variables because the categorical variables are nominal (not ordinal) so one-hot encoding is the most suitable method.
+# One-hot encode categorical variables. I will use the OneHotEncoder to encode the categorical variables because the categorical variables are nominal (not ordinal) so one-hot encoding is the most suitable method.
 encoder = OneHotEncoder(
     drop='first', sparse_output=False, handle_unknown='ignore')
 
@@ -1061,12 +1061,12 @@ X_train_with_const_rg = sm.add_constant(X_train_preprocessed_rg)
 final_features_rg = stepwise_regression(X_train_preprocessed_rg, y_train_rg)
 
 # Print the final features that were selected after stepwise regression
-# This helps us understand which features were deemed most important for the model
+# This helps me understand which features were deemed most important for the model
 print("\nFinal features after stepwise regression:")
 print(final_features_rg)
 
 # Prepare final datasets for modeling using only the selected features
-# This ensures we're using the most relevant features for our regression model
+# This ensures I're using the most relevant features for my regression model
 X_train_final_rg = X_train_preprocessed_rg[final_features_rg]
 X_test_final_rg = X_test_preprocessed_rg[final_features_rg]
 
@@ -1109,7 +1109,7 @@ df_regression.head(5)
 #
 
 # %%
-#  We can modify our approach to use a technique called "elbow method" to automatically select the number of features. This method looks at the cumulative importance of features and selects a point where adding more features doesn't significantly increase the total importance.
+#  I can modify my approach to use a technique called "elbow method" to automatically select the number of features. This method looks at the cumulative importance of features and selects a point where adding more features doesn't significantly increase the total importance.
 
 
 def feature_selection_ramdomforestclassifier(X: Annotated[pd.DataFrame, "Training data features"],
@@ -1452,7 +1452,7 @@ for i, model in enumerate(models, 1):
 # ### Hyper-parameter tuning for **Random Forest Regression** model
 
 # %% [markdown]
-# We perform hyperparameter tuning for our Random Forest Regression model by following the given procedure:
+# I perform hyperparameter tuning for my Random Forest Regression model by following the given procedure:
 #
 # 1. **Parameter Grid**: Define a grid of hyperparameters to search through, including:
 #    - `n_estimators`: Number of trees in the forest (500 or 600)
@@ -1466,7 +1466,7 @@ for i, model in enumerate(models, 1):
 #
 # 3. **RandomizedSearchCV**: Use `RandomizedSearchCV` to perform the hyperparameter search, which is more efficient than an exhaustive grid search for large parameter spaces.
 #
-# 4. **Model Fitting**: Fit the `RandomizedSearchCV` object to our training data.
+# 4. **Model Fitting**: Fit the `RandomizedSearchCV` object to my training data.
 #
 # 5. **Results**: Print the best parameters found and the corresponding best score.
 #
@@ -1583,7 +1583,7 @@ print(f"Standard deviation of CV score: {cv_val.std():.4f}")
 # ### Hyper-parameter tuning for **Gradient Boosting Regressor** model
 
 # %% [markdown]
-# We perform hyperparameter tuning for our Gradient Boosting Regressor model by following this procedure:
+# I perform hyperparameter tuning for my Gradient Boosting Regressor model by following this procedure:
 #
 # 1. **Parameter Grid**: Define a grid of hyperparameters to search through, including:
 #    - `n_estimators`: Number of boosting stages (100 or 200)
@@ -1598,7 +1598,7 @@ print(f"Standard deviation of CV score: {cv_val.std():.4f}")
 #
 # 3. **GridSearchCV**: Use `GridSearchCV` to perform an exhaustive search over the specified parameter grid.
 #
-# 4. **Model Fitting**: Fit the `GridSearchCV` object to our training data.
+# 4. **Model Fitting**: Fit the `GridSearchCV` object to my training data.
 #
 # 5. **Results**: Print the best parameters found and the corresponding best score.
 #
@@ -1631,7 +1631,7 @@ def custom_score(estimator, X, y):
     # Penalize the difference between train and cv scores
     penalty = abs(train_score - cv_score)
 
-    return cv_score - penalty  # We want to maximize this
+    return cv_score - penalty  # I want to maximize this
 
 
 # Create a random forest regressor
@@ -1663,11 +1663,11 @@ best_gb = GradientBoostingRegressor(
     **grid_search.best_params_, random_state=9214)
 
 # Fit the model to the training data
-# This trains the model on our prepared training dataset
+# This trains the model on my prepared training dataset
 best_gb.fit(X_train_final_rg, y_train_rg)
 
 # Make predictions on the test set
-# We use the trained model to predict prices for our test data
+# I use the trained model to predict prices for my test data
 y_pred = best_gb.predict(X_test_final_rg)
 
 # Calculate various performance metrics
@@ -1702,7 +1702,7 @@ cv_val = cross_val_score(best_gb, X_cross_val_rg,
 print(f"Cross-validation scores: {cv_val}")
 
 # Calculate and print the mean cross-validation score
-# This gives us an overall measure of the model's performance across all folds
+# This gives me an overall measure of the model's performance across all folds
 print(f"Mean CV score: {cv_val.mean():.4f}")
 
 # Calculate and print the standard deviation of the cross-validation scores
