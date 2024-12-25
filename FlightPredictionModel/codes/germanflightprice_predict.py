@@ -20,9 +20,8 @@
 # 5. Model comparison and interpretation
 #
 # ## Author
-# 1. Ba Viet Anh (Henry) Nguyen
-# 2. Xuan Tuan Minh Nguyen
-# 3. Trong Dat Hoang
+# Ba Viet Anh (Henry) Nguyen
+
 
 # %% [markdown]
 # ## Initialize a Virtual Environment using `Conda` (If you have your own `Virutal Environment` your then ignore this !)

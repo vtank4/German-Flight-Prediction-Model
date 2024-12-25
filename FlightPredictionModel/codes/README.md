@@ -31,8 +31,7 @@ The workflow of the project includes:
 ## Authors
 
 1. Ba Viet Anh (Henry) Nguyen
-2. Xuan Tuan Minh Nguyen
-3. Trong Dat Hoang
+
 
 ## How to Run
 
